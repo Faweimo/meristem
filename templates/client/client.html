@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client view page</title>
+</head>
+<body>
+    <div class="table">
+        <button><a href="{% url 'login' %}">
+            LOGIN
+        </a></button>
+        <div class="form">
+            <form action="{% url 'index' %}" method="POST">
+                {% csrf_token %}
+                
+                
+               
+                
+
+                <div class="title">
+                    <label for="">title:</label>
+                    <input type="text" name="title" id="id_title" placeholder="title">
+                </div>
+
+                <div class="first_name">
+                    <label for="">first_name:</label>
+                    <input type="text" name="first_name" id="id_first_name" placeholder="first_name">
+                </div>
+
+                <div class="surname">
+                    <label for="">surname:</label>
+                    <input type="text" name="surname" id="id_surname" placeholder="surname">
+                </div>
+
+                <div class="other_name">
+                    <label for="">other_name:</label>
+                    <input type="text" name="other_name" id="id_other_name" placeholder="other_name">
+                </div>
+
+                <div class="phone_number">
+                    <label for="">phone_number:</label>
+                    <input type="text" name="phone_number" id="id_phone_number" placeholder="phone_number">
+                </div>
+
+                <div class="address">
+                    <label for="">address:</label>
+                    <input type="text" name="address" id="id_address" placeholder="address">
+                </div>
+
+                <div class="company_name">
+                    <label for="">company_name:</label>
+                    <input type="text" name="company_name" id="id_company_name" placeholder="company_name">
+                </div>
+
+                <div class="company_address">
+                    <label for="">company_address:</label>
+                    <input type="text" name="company_address" id="id_company_address" placeholder="company_address">
+                </div>
+
+                <div class="means_of_identification">
+                    <label for="">means_of_identification:</label>
+                    <select type="text" name="means_of_identification" id="id_means_of_identification" placeholder="means_of_identification" selected=selected>
+                        <option value="1">--means_of_identification--</option>
+                        <option value="2">drivers license</option>
+                        <option value="3">international passport</option>
+                        <option value="4">voters card</option>
+
+                    </select>
+                </div>
+
+                <div class="identification_number">
+                    <label for="">identification_number:</label>
+                    <input type="text" name="identification_number" id="id_identification_number" placeholder="identification_number">
+                </div>
+
+                <div class="PFA">
+                    <label for="">PFA:</label>
+                    <input type="text" name="PFA" id="id_PFA" placeholder="PFA">
+                </div>
+
+                <div class="RSA">
+                    <label for="">RSA:</label>
+                    <input type="text" name="RSA" id="id_RSA" placeholder="RSA">
+                </div>
+
+                <div class="address">
+                    <label for="">address:</label>
+                    <input type="text" name="address" id="id_address" placeholder="address">
+                </div>
+
+                <div class="will_executors">
+                    <label for="">will_executors:</label>
+                    <input type="text" name="will_executors" id="id_will_executors" placeholder="will_executors">
+                </div>
+
+                <div class="options">
+                    <label for="">options:</label>
+                    <input type="text" name="options" id="id_options" placeholder="options">
+                </div>
+
+                <!-- beneficiary details  -->
+                <div class="full_name">
+                    <label for="">full_name:</label>
+                    <input type="text" name="full_name" id="id_full_name" placeholder="full_name">
+                </div>
+
+                <div class="address_beneficiary">
+                    <label for="">address_beneficiary:</label>
+                    <input type="text" name="address_beneficiary" id="id_address_beneficiary" placeholder="address_beneficiary">
+                </div>
+
+                <div class="phone_number_beneficiary">
+                    <label for="">phone_number_beneficiary:</label>
+                    <input type="text" name="phone_number_beneficiary" id="id_phone_number_beneficiary" placeholder="phone_number_beneficiary">
+                </div>
+
+                <div class="bank_name_beneficiary">
+                    <label for="">bank_name_beneficiary:</label>
+                    <input type="text" name="bank_name_beneficiary" id="id_bank_name_beneficiary" placeholder="bank_name_beneficiary">
+                </div>
+
+                <div class="bank_name">
+                    <label for="">bank_name:</label>
+                    <input type="text" name="bank_name" id="id_bank_name" placeholder="bank_name">
+                </div>
+
+                <!-- bank details  -->
+
+                <div class="bank_name">
+                    <label for="">bank_name:</label>
+                    <input type="text" name="bank_name" id="id_bank_name" placeholder="bank_name">
+                </div>
+
+                <div class="account_number">
+                    <label for="">account_number:</label>
+                    <input type="text" name="account_number" id="id_account_number" placeholder="account_number">
+                </div>
+
+                <div class="branch">
+                    <label for="">branch:</label>
+                    <input type="text" name="branch" id="id_branch" placeholder="branch">
+                </div>
+
+
+                <div class="button">
+                    <button type="submit">submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
