@@ -13,9 +13,9 @@
                 <form action="{% url 'clientsave' %}" method="POST">
                     {% csrf_token %}
                     
-                    {{client }}
+                    {{ client }}
                     {{ bank }}
-                    {{ beneficiary }}
+                    
                     <div class="button">
                         <button type="submit">save</button>
                     </div>

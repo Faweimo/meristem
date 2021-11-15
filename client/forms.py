@@ -18,6 +18,7 @@ class BankDetailForm(forms.ModelForm):
     class Meta:
         model           = BankDetail
         fields          = ('bank_name','account_number','branch')
+        
                
 class BeneficiaryDetailForm(forms.ModelForm):
     class Meta:

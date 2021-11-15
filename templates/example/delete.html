@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+{% load static %}
+
+{% block extrstyle %}
+  <link rel="stylesheet" href="{% static 'css/delete.css' %}">
+{% endblock extrstyle %}
+{% block container-fluid %}
+<div class="container">
+    <div class="wrapper">
+        <div class="form">
+            <form action="" method="POST">
+                {% csrf_token %}
+               <div class="container">
+                Are you sure you wanna delete this 
+                <button type="submit" value="Delete">Delete</button>
+               </div>
+            </form>
+        </div>
+    </div>
+</div>
+     
+{% endblock container-fluid %}
+  

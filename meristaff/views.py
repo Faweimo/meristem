@@ -80,8 +80,7 @@ def delete_client(request,client_id):
     if not request.user.user_type == 1:
         return HttpResponse('You are not allow to view this page')        
     else:
-        name = request.GET.get('name')
-        
+       
         client = ClientDetail.objects.get(id=client_id)
         
         if request.method == 'POST':

@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'client.apps.ClientConfig',
     'accounts.apps.AccountsConfig',
     'meristaff.apps.MeristaffConfig',
+    'example.apps.ExampleConfig',
     
     # packages 
     'formtools',
@@ -154,3 +155,10 @@ MEDIA_URL = '/media/'
 
 LOGIN_REDIRECT_URL = 'meristaff'
 LOGOUT_REDIRECT_URL = '/'
+
+# Default notifications 
+
+from django.contrib.messages import constants as messages
+MESSAGE_TAGS ={
+    messages.ERROR:'danger'
+}

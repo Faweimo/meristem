@@ -59,6 +59,7 @@ class BeneficiaryDetail(models.Model):
 
 class ClientDetail(models.Model):
     
+    bankdetail                    = models.OneToOneField(BankDetail,on_delete=models.CASCADE,blank=True,null=True)
     title                           = models.CharField(max_length=100)
     first_name                      = models.CharField(max_length=100)
     surname                         = models.CharField(max_length=100)
@@ -77,7 +78,7 @@ class ClientDetail(models.Model):
     identification_number           = models.CharField(max_length=100)
     PFA                             = models.CharField(max_length=100)
     RSA                             = models.CharField(max_length=100)
-    address                         = models.CharField(max_length=100)
+    
     will_executors_choice   = ((1,'meristem trustees'),
                             (2,'others'),
                            
@@ -85,8 +86,7 @@ class ClientDetail(models.Model):
     will_executors                  = models.PositiveSmallIntegerField(choices = will_executors_choice,blank=True,null=True )
     options                         = models.CharField(max_length=100)
     
-    bank_details                    = models.ForeignKey(BankDetail,on_delete=models.CASCADE)
-    beneficiary_details             = models.ForeignKey(BeneficiaryDetail,on_delete=models.CASCADE)
+    # beneficiary_details             = models.ForeignKey(BeneficiaryDetail,on_delete=models.CASCADE)
     
     
 

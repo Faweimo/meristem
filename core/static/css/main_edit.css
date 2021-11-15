@@ -1,0 +1,151 @@
+.home-intro .home-text .nav__list-item h1 {
+    min-height: 1rem;
+    font-size: 5rem;
+}
+
+
+footer{
+    background: #222;
+    color: wheat;
+    width: 100%;
+    padding: 20px;
+   
+}
+footer .footertags{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+}
+footer ul{
+    list-style-type: none;
+    margin: 10px;
+    padding: 15px;
+}
+footer ul li{
+    border-bottom: 2px solid #fff;
+    margin: 10px;
+    /* padding: 15px; */
+    line-height: 2.8;
+
+}
+footer a{
+    color: wheat;
+    text-decoration: none;
+}
+footer .ads1 ul {
+    display: block;
+}
+footer .ads2 h3{
+    text-transform: capitalize;
+    font-size: 1.5em;
+    font-weight: bold;
+    padding: 10px;
+    margin: 0;
+}
+footer .ads2 input{
+    padding: 10px;
+    border-radius: 8px;
+    background:#808080 ;
+    border: none;
+    width: 100%;
+    margin: 0;
+}
+footer .ads2 .member{
+    padding: 10px;
+    margin: 0;
+}
+footer .ads3 img{
+    width: 50%;
+    padding: 20px;
+}
+footer .ads3 .logo{
+    display: grid;
+    /* grid-template-columns: repeat(2,1fr); */
+    justify-self: start;
+}
+footer p{
+    text-align: center;
+    padding: 10px;
+}
+footer .social-media{
+    padding: 20px;   
+    margin-bottom:10px;
+
+}
+
+footer .social-media span{
+    padding: 20px;
+    width: fit-content;
+}
+footer .social-media h2{
+    margin-bottom: 10px;
+}
+footer .subs input::placeholder{
+    color: #fff;
+}
+footer .copyright {
+    background: #222;
+    width: 103%;
+    margin: 0 85px 0 -20px;
+}
+
+.more-stuff-grid {
+    background: white;
+    padding: 4em 0;
+    display: grid;
+    grid-gap: 2em;
+    align-items: center;
+    grid-template-columns: minmax(1em, 1fr) repeat(2, minmax(200px, 400px)) minmax(1em, 1fr);
+    color: #516063;
+}
+
+.nav__link--btn--highlight {
+    background: #5c492c;
+    border-color: #5c492c;
+    color: wheat;
+}
+code {
+    font-size: 87.5%;
+    color: #5c492c;
+    word-wrap: break-word;
+}
+.trial .username {
+    color: #5c492c;
+}
+
+#trial .nav__link--btn:hover {
+    background: var(--text);
+    color: var(--text-inverse);
+    border-color: var(--text);
+    background: #286c6f;
+    border-color: #286c6f;
+    color: white;
+}
+
+.nav__link--btn--highlight:hover {
+    background: #222;
+    border-color: var(--text);
+}
+
+.nav__link--btn:hover {
+    background: #222;
+    color: var(--text-inverse);
+    border-color: var(--text);
+    color: wheat;
+}
+
+a:hover {
+    color: #80270c;
+    text-decoration: none;
+}
+
+#num {
+    font-weight: bolder;
+    color: #80270c;
+}
+#payroll{
+    font-size: 3.5rem;
+}
+
+.home-intro {
+    padding: 15vh 0;
+}

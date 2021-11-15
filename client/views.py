@@ -27,53 +27,54 @@ def index(request):
         identification_number   = request.POST['identification_number']
         PFA                     = request.POST['PFA']
         RSA                     = request.POST['RSA']
-        address                 = request.POST['address']
+        
         will_executors          = request.POST['will_executors']
         options                 = request.POST['options']
-        bank_details            = request.POST.get('bank_details')
-        beneficiary_details     = request.POST.get('beneficiary_details')
+        # bank_details            = request.POST['bank_details']
+        # beneficiary_details     = request.POST.get('beneficiary_details')
         
         
-        bank_name               = request.POST['bank_name']
+        bank_name               = request.POST.get('bank_name')
         account_number          = request.POST['account_number']
         branch                  = request.POST['branch']
         
-        full_name               = request.POST['full_name']
-        address_beneficiary     = request.POST['address_beneficiary']
-        phone_number_beneficiary            = request.POST['phone_number_beneficiary']
-        bank_name_beneficiary               = request.POST['bank_name_beneficiary']
+        # full_name               = request.POST['full_name']
+        # address_beneficiary     = request.POST['address_beneficiary']
+        # phone_number_beneficiary            = request.POST['phone_number_beneficiary']
+        # bank_name_beneficiary               = request.POST['bank_name_beneficiary']
         
         # try:
             # saving to client models 
-        client                  = ClientDetail.objects.create()      
-        bank_obj                = BankDetail(id=bank_details)
-        beneficiary_obj         = BeneficiaryDetail(id=beneficiary_details)
+        client                  = ClientDetail.objects.create(title=title,first_name=first_name,surname=surname,other_name=other_name,phone_number=phone_number,company_name=company_name,company_address=company_address,means_of_identification=means_of_identification,identification_number=identification_number,PFA=PFA,RSA=RSA,will_executors=will_executors,options=options)      
         
-        client.title            = title
-        client.first_name       = first_name
-        client.surname          = surname
-        client.other_name       = other_name
-        client.phone_number     = phone_number
-        client.address          = address
-        client.company_name     = company_name
-        client.company_address  = company_address
-        client.means_of_identification  = means_of_identification
-        client.identification_number    = identification_number
-        client.PFA                      = PFA
-        client.RSA                      = RSA
-        client.address                  = address
-        client.will_executors           = will_executors
-        client.options                  = options
-        client.bankdetail                  = bank_obj
-        client.bankdetail.bank_name                 = bank_name
-        client.bankdetail.account_number                 = account_number
-        client.bankdetail.branch                 = branch
+        # bank_obj                = BankDetail(id=bank_details)
+        # beneficiary_obj         = BeneficiaryDetail(id=beneficiary_details)
         
-        client.beneficiarydetail                  = beneficiary_obj
-        client.beneficiarydetail.full_name               = full_name
-        client.beneficiarydetail.address_beneficiary                  = address_beneficiary
-        client.beneficiarydetail.phone_number_beneficiary                  = phone_number_beneficiary
-        client.beneficiarydetail.bank_name_beneficiary                  = bank_name_beneficiary
+        # client.title            = title
+        # client.first_name       = first_name
+        # client.surname          = surname
+        # client.other_name       = other_name
+        # client.phone_number     = phone_number
+        # client.address          = address
+        # client.company_name     = company_name
+        # client.company_address  = company_address
+        # client.means_of_identification  = means_of_identification
+        # client.identification_number    = identification_number
+        # client.PFA                      = PFA
+        # client.RSA                      = RSA
+        # client.address                  = address
+        # client.will_executors           = will_executors
+        # client.options                  = options
+        bankdetail = BankDetail.objects.create()
+        client.bankdetail.bank_name       = bank_name
+        client.bankdetail.account_number  = account_number
+        client.bankdetail.branch          = branch
+        
+        # client.beneficiarydetail                  = beneficiary_obj
+        # client.beneficiarydetail.full_name               = full_name
+        # client.beneficiarydetail.address_beneficiary                  = address_beneficiary
+        # client.beneficiarydetail.phone_number_beneficiary                  = phone_number_beneficiary
+        # client.beneficiarydetail.bank_name_beneficiary                  = bank_name_beneficiary
         
         
         client.save()
@@ -112,16 +113,16 @@ def clientsave(request):
     if request.method == 'POST':
         client = ClientDetailForm(request.POST)
         bank   = BankDetailForm(request.POST)
-        beneficiary = BeneficiaryDetailForm(request.POST)
+        # beneficiary = BeneficiaryDetailForm(request.POST)
         
-        if client.is_valid() and bank.is_valid() and beneficiary.is_valid():
+        if client.is_valid() and bank.is_valid():
             # try:
             bankform = bank.save()
-            beneficiaryform = beneficiary.save()
+            # beneficiaryform = beneficiary.save()
             clientform = client.save(commit=False)
         
             clientform.bankform     = bankform
-            clientform.beneficiaryform = beneficiaryform
+            # clientform.beneficiaryform = beneficiaryform
             clientform.save()
             print('its seems good')
             return redirect('/')
@@ -134,12 +135,12 @@ def clientsave(request):
     else:
         client = ClientDetailForm()
         bank   = BankDetailForm()
-        beneficiary = BeneficiaryDetailForm()
+        # beneficiary = BeneficiaryDetailForm()
         
     context = {
         'client':client,
         'bank':bank,
-        'beneficiary':beneficiary
+        # 'beneficiary':beneficiary
     }    
     return render(request,'client/formstyle.html',context)
 
