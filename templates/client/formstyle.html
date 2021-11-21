@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,23 +6,153 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/example.css' %}">
+
+    <!-- my own links here owolabi  -->
+<link href="{% static 'js/jquery-ui-1.13.0/jquery-ui.min.css' %}" rel="stylesheet">
+<link href="{% static 'js/jquery-ui-1.13.0/jquery-ui.structure.min.css' %}" rel="stylesheet">
+<link href="{% static 'js/jquery-ui-1.13.0/jquery-ui.theme.min.css' %}" rel="stylesheet">
+ 
 </head>
 <body>
+    <a href="{% url 'login' %}"> LOGIN</a>
     <div class="container">
         <div class="wrapper">
             <div class="form">
-                <form action="{% url 'clientsave' %}" method="POST">
+                <form action="{% url 'clientsave' %}" method="POST" enctype="multipart/form-data">
                     {% csrf_token %}
                     
-                    {{ client }}
-                    {{ bank }}
-                    
-                    <div class="button">
-                        <button type="submit">save</button>
+                    <label for=""> title</label>
+                    {{ client.title }}
+                    <label for=""> first_name</label>
+                    {{ client.first_name }}
+                    <label for=""> surname</label>
+                    {{ client.surname }}
+                    <label for=""> other_name</label>
+                    {{ client.other_name }}
+                    <label for=""> phone_number</label>
+                    {{ client.phone_number }}
+                    <label for=""> address</label>
+                    {{ client.address }}
+                    <label for=""> company_name</label>
+                    {{ client.company_name }}
+                    <label for=""> company_address</label>
+                    {{ client.company_address }}
+                    <label for=""> means_of_identification</label>
+                    {{ client.means_of_identification }}
+                    <label for=""> identification_number</label>
+                    {{ client.identification_number }}
+                    <label for=""> PFA</label>
+                    {{ client.PFA }}
+                    <label for=""> RSA</label>
+                    {{ client.RSA }}
+                    <label for=""> will_executors</label>
+                    {{ client.will_executors }}
+                    <label for=""> options</label>
+                    {{ client.options }}
+
+                    <!-- bank details  -->
+                    <label for=""> bank_name</label>
+                    {{ client.bank_name }}
+                    <label for=""> account_number</label>
+                    {{ client.account_number }}
+                    <label for=""> branch</label>
+                    {{client.branch}}
+
+
+                        <!-- moer bank detals  -->
+
+
+                    <div class="add_more_bank" id="add_more_bank">
+                    <div id="bank_name2">
+                        <label for=""> bank_name_2</label>
+                        {{ client.bank_name_2 }}
                     </div>
-                </form>
+                    <div id="bank_num2">
+                        <label for=""> account_number_2</label>
+                    {{ client.account_number_2 }}
+                    </div>
+                 <div id="bank_branch2">
+                    <label for=""> branch_2</label>
+                    {{client.branch_2 }}
+                 </div>
+                    </div>
+                    <div id="button">
+                        <button id="more-line" type="button">Add bank details</button>
+                    </div>
+
+                    <!-- beneficiary details  -->
+                    <label for=""> full_name</label>
+                    {{ client.full_name }}
+                    <label for=""> address_beneficiary</label>
+                    {{ client.address_beneficiary }}
+                    <label for=""> phone_number_beneficiary</label>
+                    {{ client.phone_number_beneficiary }}
+                    <label for=""> bank_name_beneficiary</label>
+                    {{ client.bank_name_beneficiary }}
+                    <label for=""></label>
+                    <label for="">Email:</label>
+                    {{ client.email }}
+                    <label for="">Values:</label>
+                    {{ client.values }}
+                    </div>
+                  
+                    
+                    <!-- more beneficary details  -->
+
+                    <div id="more_beneficiary">
+                        <label for=""> full_name2</label>
+                    {{ client.full_name_2 }}
+                    <label for=""> address_beneficiary2</label>
+                    {{ client.address_beneficiary_2 }}
+                    <label for=""> phone_number_beneficiary2</label>
+                    {{ client.phone_number_beneficiary_2 }}
+                    <label for=""> bank_name_beneficiary2</label>
+                    {{ client.bank_name_beneficiary_2 }}
+                    <label for="">Email2:</label>
+                    {{ client.email_2}}
+                    <label for="">Values2:</label>
+                    {{ client.values_2}}
+                    </div>
+
+                    <div id="button">
+                        <button id="more-beneficiary" type="button">Add beneficary details</button>
+                    </div>
+
+
+
+
+                    <!-- modal for preview  -->
+                       
+                        <!-- The Modal -->
+                        <div id="myModal" class="modal">
+
+                            <!-- Modal content -->
+                            <div class="modal-content">
+                            <span class="close">&times;</span>
+                            <span id="textInput"></span>
+                            <span id="textInput2"></span>
+                            
+                            <button type="submit">submit</button>
+                            </div>
+                        </div> 
+                    
+                        <button id="myBtn">preview</button>
+                    </form>
             </div>
         </div>
     </div>
+
+  
+    <script src="{% static 'js/example.js' %}"></script>
+
+
+                        <!-- my own script here owolabi  -->
+                        <script type="text/javascript" src="{% static 'js/jquery-3.6.0.min.js' %}"></script>
+
+                        <script src="{% static 'js/jquery-3.6.0.min.js' %}"></script>
+                        <script src="{% static 'js/jquery-ui.js' %}"></script>
+
+                        <script src="{% static 'js/add_more.js'  %}"></script>
 </body>
 </html>

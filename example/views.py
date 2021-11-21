@@ -13,13 +13,14 @@ from django.views.generic import (
 )
 from .forms import ClientForm
 from accounts.models import User
+from client.models import ClientDetail
 # Create your views here.
 def index(request):
     if not request.user.user_type == 1:
         return HttpResponse('You are not allow to view this page')
     else:
         
-        clients = Client.objects.all().order_by('-updated_at')
+        clients = ClientDetail.objects.all()
         paginator               = Paginator(clients,25)
         page                    = request.GET.get('page')
         paged_clients           = paginator.get_page(page)
@@ -55,7 +56,7 @@ def search(request):
         if 'keyword' in request.GET:
             keyword     = request.GET['keyword']
             if keyword:
-                clients = Client.objects.all().order_by('-updated_at').filter(Q(first_name__icontains=keyword )|Q(last_name__icontains=keyword))
+                clients = ClientDetail.objects.all().order_by('-updated_at').filter(Q(first_name__icontains=keyword )|Q(last_name__icontains=keyword))
                 paginator               = Paginator(clients,25)
                 page                    = request.GET.get('page')
                 paged_clients           = paginator.get_page(page)
@@ -78,7 +79,7 @@ def delete(request,delete_id):
     
     
     else:
-        client  = Client.objects.get(id=delete_id)
+        client  = ClientDetail.objects.get(id=delete_id)
         if request.method == 'POST':
             client.delete()
             messages.success(request,'Client deleted successfully')
@@ -94,7 +95,7 @@ def edit(request,edit_id):
     if not request.user.user_type == 1:
         return HttpResponse('You are not allow to vie this page')
     else:
-        client_obj = Client.objects.get(id=edit_id)
+        client_obj = ClientDetail.objects.get(id=edit_id)
         if request.method == 'POST':
             clientform = ClientForm(request.POST or None, instance=client_obj)
             # validating the form 

@@ -1,9 +1,10 @@
 from django.http.response import HttpResponse
 from django.shortcuts import redirect, render
-from client.models import *
+from client.models import ClientDetail
 from accounts.models import User
 from django.contrib.auth.decorators import login_required
 from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
+
 # Create your views here.
 
 @login_required
@@ -13,16 +14,15 @@ def index(request):
     else:
         
         client  = ClientDetail.objects.all()
-        bank    = BankDetail.objects.all()
+        
         paginator               = Paginator(client,25)
         page                    = request.GET.get('page')
         paged_employees         = paginator.get_page(page)
     context = {
         'client':paged_employees,
         
-        
     }
-    return render(request,'meristaff/index.html',context)
+    return render(request,'meristaff/indexs.html',context)
 
 # for editing and updating client models or details 
 
@@ -36,6 +36,9 @@ def edit_clientdetails(request,client_id):
             'client':client
         }
         return render(request,'meristaff/edit_staff.html',context)
+    
+    
+    
     
 def edit_client_save(request):
     if not request.user.user_type == 1:
@@ -60,15 +63,10 @@ def edit_client_save(request):
             client.title = title
             client.first_name = first_name
             client.surname = surname
+            client.bank_name = bank_name
+            client.full_name = full_name
             client.save()
             
-            bank = BankDetail.objects.get(id=client_id)
-            bank.bank_name = bank_name
-            bank.save()
-            
-            beneficiary         = BeneficiaryDetail.objects.get(id=client_id)
-            beneficiary.full_name = full_name
-            beneficiary.save()
             print('success')
             return redirect('meristaff')
             

@@ -27,17 +27,20 @@
   <tr>
     <td>{{ c.id }}</td>
     <td>{{ c.title }} {{ c.first_name }} {{ c.surname }}</td>
-    <td>{{ c.address }}</td>
+    <td><address>
+        {{ c.address }}
+    </address></td>
     <td>
-        <a href="{% url 'edit_client' client.id  %}" class="btn btn-success"> Update</a>
+        <a href="{% url 'edit_client' c.id  %}" class="btn btn-success"> Update</a>
 
-        <a href="{% url 'delete_client' client.id  %}" class="btn btn-success"> Delete</a>
+        <a href="{% url 'delete_client' c.id  %}" class="btn btn-success"> Delete</a>
                                                      
        
     </td>
   </tr>
   {% endfor %}
 </table>
+
 <nav class="arial-label">
     {% if client.has_other_pages %}
     <ul class="pagination">  

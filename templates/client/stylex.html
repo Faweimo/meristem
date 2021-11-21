@@ -1,0 +1,1048 @@
+{% load static %}
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Simple Will by Meristem Trustees</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+<meta name="keywords" content="" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<!-- Custom Theme files -->
+<!-- font-awesome-icons -->
+<link href="css/font-awesome.css" rel="stylesheet"> 
+<!-- //font-awesome-icons -->
+<link href="{% static 'css/stylex.css' %}" rel='stylesheet' type='text/css' />
+<!--fonts--> 
+<link href="//fonts.googleapis.com/css?family=Barlow:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+<!--//fonts--> 
+<link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.6.3/css/all.css' integrity='sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/' crossorigin='anonymous'>
+
+<!-- my own links here owolabi  -->
+<link href="{% static 'js/jquery-ui-1.13.0/jquery-ui.min.css' %}" rel="stylesheet">
+<link href="{% static 'js/jquery-ui-1.13.0/jquery-ui.structure.min.css' %}" rel="stylesheet">
+<link href="{% static 'js/jquery-ui-1.13.0/jquery-ui.theme.min.css' %}" rel="stylesheet">
+ 
+ 
+</head>
+<body>
+    	   
+   <style>
+   .button_ {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+}
+
+.button_5 {
+    border-radius: 50%;
+    
+}
+
+.black_overlay 
+{
+      display: none;
+      position: fixed;
+      top: 0%;
+      left: 0%;
+      width: 100%;
+      height: 100%;
+      background-color: black;
+      z-index: 1001;
+      -moz-opacity: 0.8;
+      opacity: .80;
+      filter: alpha(opacity=80);
+      sc
+}
+.white_content
+{
+  display: none;
+  position: fixed;
+  top: 2%;
+  left: 3%;
+  width: 90%;
+  height:auto;
+  padding: 16px;
+  border: 2px solid white;
+  background-color: white;
+  z-index: 1002;
+  overflow: auto;
+}
+
+ .book-form input[type="button"] {
+    text-transform: capitalize;
+    background: #154d34;
+    color: #ffffff;
+    padding: 0.7em 6em;
+    border: none;
+    border: 2px solid #154d34;
+    font-weight: 600;
+    font-size: 1em;
+    margin-top: 0em;
+    outline: none;
+    letter-spacing: 1px;
+    -webkit-transition: .5s all;
+    -moz-transition: .5s all;
+    transition: .5s all;
+    cursor: pointer;
+}
+#more_bank_2{
+    display: block;
+}
+   </style>
+   <script>
+   $(document).ready(function () {
+     // alert("great");
+ 
+
+       $("#addBeneficiarybtn").click(function() {
+          // alert("gre");
+         var newElement = '<tr><td> <input type="text" name="beneficiary_fullname[]" class="beneficiary_fullname" style="padding-left:5px;" placeholder="" ></td>'+
+                          '<td> <input type="text" name="beneficiary_address[]" class="beneficiary_address" style="padding-left:5px;" placeholder="" ></td>'+
+                          '<td> <input type="number" name="beneficiary_phone[]" class="beneficiary_phone"  placeholder=""  style="padding-left:5px;"></td>'+
+                          '<td><input type="text" name="beneficiary_email[]" class="beneficiary_email" style="padding-left:5px;" placeholder=""></td>'+
+                          '<td><input type="text" name="beneficiary_shareValues[]" class="beneficiary_shares"  style="padding-left:5px;" placeholder=""></td></tr>';
+         $( "#beneficiaryTable" ).append( $(newElement) );
+          // $("#beneficiaryTable").append('<tr><td> <input type="text" name="beneficiary_fullname1"  style="padding-left:5px;" placeholder=""  required=""></td>');
+		  // $("#beneficiaryTable").append('<td> <input type="text" name="beneficiary_address1" style="padding-left:5px;" required="" placeholder=""></td>');
+		  // $("#beneficiaryTable").append('<td> <input type="text" id="" name="beneficiary_phone1" placeholder="" required=""   style="padding-left:5px;"></td>');
+		 //  $("#beneficiaryTable").append('<td> <input type="text" name="beneficiary_email1" style="padding-left:5px;" placeholder=""></td>');
+		 //  $("#beneficiaryTable").append('<td> <input type="text" name="beneficiary_shareValues" style="padding-left:5px;" placeholder=""></td></tr>');
+       
+        });
+        
+        var x = 1; 
+        var max_fields = 10; //maximum input boxes allowed
+       $("#addBankbtn").click(function(e) {
+          // alert("gre"); country1'<td><input type="text" name="ItemPrice[]" id="ItemPrice-' + i + '"></td>';
+         
+         // console.log($('[id^=person_moreBank_]:last').val());
+         //   var i = $('table tbody tr select').length;
+       //   var j = $('table tbody tr input #person_moreAccountNumber_'+ i).length;
+        //  var k = $('#person_moreBranch_').length;
+        //  console.log("i: "+i +" j: "+ j + " k: " + k);
+        //  console.log("0: "+ $('#person_moreBank_' + i).val());
+
+          
+        e.preventDefault();
+        if (x <= max_fields) 
+        { 
+         var newElement = '<tr>'+
+                              '<td>'+
+                                  '<div class="book_date">'+
+                                     '<select id="country1" name="person_bankName[]"  class="person_bankName frm-field required sect" style="height:40px;border-radius:0px">'+
+    									  '<option value=""> -- Select Bank -- </option>'+
+                                          '<option value="Access Bank">Access Bank</option>'+
+                                          '<option value="Diamond Bank">Diamond Bank</option>'+   
+                    					  '<option value="EcoBank">EcoBank</option>'+
+                    					  '<option value="FirstBank">First Bank</option>'+
+                    					  '<option value="FCMB Bank">FCMB Bank</option>'+
+                    					  '<option value="Fidelity Bank">Fidelity Bank</option>'+
+                    					  '<option value="GTBank">GTBank</option>'+
+                    					  '<option value="Heritage Bank">Heritage Bank</option>'+
+                    					  '<option value="Polaris Bank">Polaris Bank</option>'+
+                    					  '<option value="Providus Bank">Providus Bank</option>'+
+                    					  '<option value="Stanbic IBTC Bank">Stanbic IBTC Bank</option>'+ 
+                    					  '<option value="Sterling Bank">Sterling Bank</option>'+
+                    					  '<option value="SunTrust Bank">SunTrust Bank</option>'+
+                    					  '<option value="Unity Bank">Unity Bank</option>'+ 
+                    					  '<option value="Union Bank">Union Bank</option>'+
+                    					  '<option value="UBA Bank">UBA Bank</option>'+
+                    					  '<option value="Wema Bank">Wema Bank</option>'+ 
+                    					  '<option value="Zenith Bank">Zenith Bank</option>'+
+                    					  '<option value="Others">Others</option>'+
+                					  '</select>'+
+            					  '</div>'+
+        					  '</td>'+
+						  '<td>'+
+						    '<div class="book_date">'+
+						        '<i class="far fa-keyboard" aria-hidden="true"></i>'+
+						            '<input  name="person_accountNumber[]" type="number" id="person_moreAccountNumber" class="person_moreAccountNumber">'+
+						    '</div>'+
+						  '</td>'+
+						  '<td>'+
+						    '<div class="book_date"><i class="far fa-keyboard" aria-hidden="true"></i>'+
+						        '<input  name="person_accountBranch[]" type="text" id="person_moreBranch" class="person_moreBranch">'+
+						    '</div>'+
+						    '</td></tr>';
+        
+         $( "#bankDetails" ).append( $(newElement) );
+         x++;
+       }
+       else{
+           alert("maximum bank reached .....")
+       }
+         
+
+        });
+           
+     $("#submitReviewbtn").click(function(){
+
+        
+      var person_title = $("#person_title").val();
+      var person_surname = $("#person_surname").val();
+      var person_firstname = $("#person_firstname").val();
+      var person_othername = $("#person_othername").val();
+      var person_allname = person_firstname + ", " + person_othername;
+      var person_phone =  $("#person_phone").val();
+      var person_address =  $("#person_address").val();
+      var person_companyName =  $("#person_company").val();
+      var person_companyAddress =  $("#person_companyAddress").val();
+      var person_companyID =  $("#country1").val();
+      var person_companyIDnumber =  $("#person_idNumber").val();
+      var person_pfa = $("#person_pfa").val();
+      var person_rsaNumber = $("#person_rsaNumber").val();
+      var person_bankName = $("#country1").val();
+      var person_accountNumber = $("#person_accountNumber").val();
+      var person_accountBranch = $("#person_accountBranch").val();
+      var beneficiary_fullname = $("#beneficiary_fullname").val();
+      var beneficiary_address = $("#beneficiary_address").val();
+      var beneficiary_phone = $("#beneficiary_phone").val();
+      var beneficiary_email = $("#beneficiary_email").val();
+      var beneficiary_shareValues = $("#beneficiary_shareValues").val();
+      var will_executors = $("#will_executors").val();
+    //  var will_executors_others = $("#will_executors_others").val();
+      
+
+
+ 
+ 
+ 
+ 
+ if(person_surname=="")
+ {
+     $('#person_surname').css({"border-color": "red","border-width":"1px", "border-style":"solid"}); 
+      var top = $('#person_surname').offset().top;
+      $('html, body').animate({ scrollTop: top - 10 }, 800);
+      $('#person_surname').attr("placeholder", "This field is compulsory..");
+      return false;
+ } else{
+      $('#person_surname').css({"border-color": "#154d34","border-width":"1px", "border-style":"solid"}); 
+    
+ } 
+ if(person_firstname=="")
+ {
+     $('#person_firstname').css({"border-color": "red","border-width":"1px", "border-style":"solid"}); 
+      var top = $('#person_firstname').offset().top;
+      $('html, body').animate({ scrollTop: top - 10 }, 800);
+      $('#person_firstname').attr("placeholder", "This field is compulsory..");
+      return false;
+ } else{
+      $('#person_firstname').css({"border-color": "#154d34","border-width":"1px", "border-style":"solid"}); 
+    
+ }
+ if(person_phone=="")
+ {
+     $('#person_phone').css({"border-color": "red","border-width":"1px", "border-style":"solid"}); 
+      var top = $('#person_phone').offset().top;
+      $('html, body').animate({ scrollTop: top - 10 }, 800);
+      $('#person_phone').attr("placeholder", "This field is compulsory..");
+      return false;
+ } else{
+      $('#person_phone').css({"border-color": "#154d34","border-width":"1px", "border-style":"solid"}); 
+    
+ }     
+  if(person_address=="")
+ {
+     $('#person_address').css({"border-color": "red","border-width":"1px", "border-style":"solid"}); 
+      var top = $('#person_address').offset().top;
+      $('html, body').animate({ scrollTop: top - 10 }, 800);
+      $('#person_address').attr("placeholder", "This field is compulsory..");
+      return false;
+ } else{
+      $('#person_address').css({"border-color": "#154d34","border-width":"1px", "border-style":"solid"}); 
+    
+ }     
+ /*if(person_companyName=="")
+ {
+     $('#person_companyName').css({"border-color": "red","border-width":"1px", "border-style":"solid"}); 
+    // var top = $('#person_companyName').offset().top;
+      $('html, body').animate({ scrollTop: ($('#person_companyName').offset().top) - 10 }, 800);
+      $('#person_companyName').attr("placeholder", "This field is compulsory..");
+      return false;
+ } else{
+      $('#person_companyName').css({"border-color": "#154d34","border-width":"1px", "border-style":"solid"}); 
+    
+ }    */
+ if(person_companyAddress=="")
+ {
+     $('#person_companyAddress').css({"border-color": "red","border-width":"1px", "border-style":"solid"}); 
+      var top = $('#person_companyAddress').offset().top;
+      $('html, body').animate({ scrollTop: top - 10 }, 800);
+      $('#person_companyAddress').attr("placeholder", "This field is compulsory..");
+      return false;
+ } else{
+      $('#person_companyAddress').css({"border-color": "#154d34","border-width":"1px", "border-style":"solid"}); 
+    
+ }    
+  if(person_pfa=="")
+ {
+     $('#person_pfa').css({"border-color": "red","border-width":"1px", "border-style":"solid"}); 
+      var top = $('#person_pfa').offset().top;
+      $('html, body').animate({ scrollTop: top - 10 }, 800);
+      $('#person_pfa').attr("placeholder", "This field is compulsory..");
+      return false;
+ } else{
+      $('#person_pfa').css({"border-color": "#154d34","border-width":"1px", "border-style":"solid"}); 
+    
+ }   
+ if(person_rsaNumber=="")
+ {
+     $('#person_rsaNumber').css({"border-color": "red","border-width":"1px", "border-style":"solid"}); 
+      var top = $('#person_rsaNumber').offset().top;
+      $('html, body').animate({ scrollTop: top - 10 }, 800);
+      $('#person_rsaNumber').attr("placeholder", "This field is compulsory..");
+      return false;
+ } else{
+      $('#person_rsaNumber').css({"border-color": "#154d34","border-width":"1px", "border-style":"solid"}); 
+    
+ }    
+      if(person_accountNumber=="")
+ {
+     
+     $('#person_accountNumber').css({"border-color": "red","border-width":"1px", "border-style":"solid"}); 
+      var top = $('#person_accountNumber').offset().top;
+      $('html, body').animate({ scrollTop: top - 10 }, 800);
+      $('#person_accountNumber').attr("placeholder", "This field is compulsory...");
+      return false;
+ }
+ else{
+      $('#person_accountNumber').css({"border-color": "#154d34","border-width":"1px", "border-style":"solid"}); 
+    
+ }  
+ if(person_accountBranch=="")
+ {
+     
+     $('#person_accountBranch').css({"border-color": "red","border-width":"1px", "border-style":"solid"}); 
+      var top = $('#person_accountNumber').offset().top;
+      $('html, body').animate({ scrollTop: top - 10 }, 800);
+      $('#person_accountBranch').attr("placeholder", "This field is compulsory...");
+      return false;
+ }
+ else{
+      $('#person_accountBranch').css({"border-color": "#154d34","border-width":"1px", "border-style":"solid"}); 
+    
+ }
+ 
+ 
+ if(beneficiary_fullname=="")
+ {
+     
+     $('#beneficiary_fullname').css({"border-color": "red","border-width":"1px", "border-style":"solid"}); 
+      var top = $('#beneficiary_fullname').offset().top;
+      $('html, body').animate({ scrollTop: top - 10 }, 800);
+      $('#beneficiary_fullname').attr("placeholder", "This field is compulsory...");
+      return false;
+ }
+ else{
+      $('#beneficiary_fullname').css({"border-color": "#154d34","border-width":"1px", "border-style":"solid"}); 
+    
+ }
+  if(beneficiary_address=="")
+ {
+     
+     $('#beneficiary_address').css({"border-color": "red","border-width":"1px", "border-style":"solid"}); 
+      var top = $('#beneficiary_address').offset().top;
+      $('html, body').animate({ scrollTop: top - 10 }, 800);
+      $('#beneficiary_address').attr("placeholder", "This field is compulsory...");
+      return false;
+ }
+ else{
+      $('#beneficiary_address').css({"border-color": "#154d34","border-width":"1px", "border-style":"solid"}); 
+    
+ }
+ 
+  if(beneficiary_phone=="")
+ {
+     
+     $('#beneficiary_phone').css({"border-color": "red","border-width":"1px", "border-style":"solid"}); 
+      var top = $('#beneficiary_phone').offset().top;
+      $('html, body').animate({ scrollTop: top - 10 }, 800);
+      $('#beneficiary_phone').attr("placeholder", "This field is compulsory...");
+      return false;
+ }
+ else{
+      $('#beneficiary_phone').css({"border-color": "#154d34","border-width":"1px", "border-style":"solid"}); 
+    
+ }
+
+ 
+ if(beneficiary_email=="")
+ {
+     
+     $('#beneficiary_email').css({"border-color": "red","border-width":"1px", "border-style":"solid"}); 
+      var top = $('#beneficiary_email').offset().top;
+      $('html, body').animate({ scrollTop: top - 10 }, 800);
+      $('#beneficiary_email').attr("placeholder", "This field is compulsory...");
+      return false;
+ }
+ else{
+      $('#beneficiary_email').css({"border-color": "#154d34","border-width":"1px", "border-style":"solid"}); 
+    
+ }
+ 
+  
+ if(beneficiary_shareValues=="")
+ {
+     
+     $('#beneficiary_shareValues').css({"border-color": "red","border-width":"1px", "border-style":"solid"}); 
+      var top = $('#beneficiary_shareValues').offset().top;
+      $('html, body').animate({ scrollTop: top - 10 }, 800);
+      $('#beneficiary_shareValues').attr("placeholder", "This field is compulsory...");
+      return false;
+ }
+ else{
+      $('#beneficiary_shareValues').css({"border-color": "#154d34","border-width":"1px", "border-style":"solid"}); 
+    
+ }
+ 
+   
+ if(person_bankName=="")
+ {
+     
+     $('#country1').css({"border-color": "red","border-width":"1px", "border-style":"solid"}); 
+      var top = $('#country1').offset().top;
+      $('html, body').animate({ scrollTop: top - 10 }, 800);
+      $('#country1').attr("placeholder", "This field is compulsory...");
+      return false;
+ }
+ else{
+      $('#country1').css({"border-color": "#154d34","border-width":"1px", "border-style":"solid"}); 
+    
+ }
+ 
+  
+  /* 
+ if(will_executor=="")
+ {
+     
+     $('#will_executor').css({"border-color": "red","border-width":"1px", "border-style":"solid"}); 
+      var top = $('#country1').offset().top;
+      $('html, body').animate({ scrollTop: top - 10 }, 800);
+      $('#will_executor').attr("placeholder", "This field is compulsory...");
+      return false;
+ }
+ else{
+      $('#will_executor').css({"border-color": "#154d34","border-width":"1px", "border-style":"solid"}); 
+    
+ }
+ 
+ */
+ 
+ 
+    
+    if(person_title !="" && person_surname!="" && person_firstname!="" &&  person_phone!="" &&  person_address!="" && 
+    person_companyAddress!="" &&  person_pfa!="" &&  person_rsaNumber!=""  && person_accountNumber !="" && person_accountBranch!="" 
+    && beneficiary_fullname !="" && beneficiary_address !="" && beneficiary_phone !="" && beneficiary_email !="" && beneficiary_shareValues !=""
+    && person_bankName !="")
+    {
+        
+    
+     // console.log(person_title);
+      if(person_title==""){
+         $("#person_title_review").html("-");
+      }else{
+            $("#person_title_review").html(person_title);
+      } 
+      if(person_surname==""){
+         $("#person_surname_review").html("-");
+      }else{
+            $("#person_surname_review").html(person_surname);
+      } 
+      if(person_othername==""){
+         $("#person_firstname_review").html("-");
+      }else{
+            $("#person_othername_review").html(person_allname);
+      } 
+      
+      
+      if(person_companyName==""){
+         $("#person_companyName_review").html("-");
+      }else{
+            $("#person_companyName_review").html(person_companyName);
+      } 
+      
+      if(person_phone==""){
+         $("#person_phone_review").html("-");
+      }else{
+            $("#person_phone_review").html(person_phone);
+      } 
+      
+      if(person_address==""){
+         $("#person_address_review").html("-");
+      }else{
+            $("#person_address_review").html(person_address);
+      } 
+      
+       if(person_companyAddress==""){
+         $("#person_companyAddress_review").html("-");
+      }else{
+            $("#person_companyAddress_review").html(person_companyAddress);
+      } 
+      
+     if(person_companyID==""){
+      $("#person_idtype_review").html("-");
+      }else{
+            $("#person_idtype_review").html(person_companyID);
+      } 
+      
+      if(person_companyIDnumber==""){
+         $("#person_idnumber_review").html("-");
+      }else{
+            $("#person_idnumber_review").html(person_companyIDnumber);
+      } 
+      
+     if(person_pfa==""){
+      $("#person_pfa_review").html("-");
+      }else{
+            $("#person_pfa_review").html(person_pfa);
+      } 
+       if(person_rsaNumber==""){
+         $("#person_rsaNumber_review").html("-");
+      }else{
+            $("#person_rsaNumber_review").html(person_rsaNumber);
+      } 
+      
+     /** for(var i=0; i< )
+     var i = $('table tbody tr select').length;
+          console.log(i);
+     for(var i=0; i< count; i++) {
+         
+     }
+     */
+     var banklist = $('#bankDetails').find('select.person_bankName').map(function() {
+          return $(this).val();
+        }).get();
+    var accountlist = $('#bankDetails').find('input.person_moreAccountNumber').map(function() {
+          return $(this).val();
+        }).get();
+        
+    var branchlist = $('#bankDetails').find('input.person_moreBranch').map(function() {
+          return $(this).val();
+        }).get();
+        
+         var beneficiary_fullnamelist = $('#beneficiaryTable').find('input.beneficiary_fullname').map(function() {
+          return $(this).val();
+        }).get();
+        
+        var beneficiary_addresslist = $('#beneficiaryTable').find('input.beneficiary_address').map(function() {
+          return $(this).val();
+        }).get();
+        
+         var beneficiary_phonelist = $('#beneficiaryTable').find('input.beneficiary_phone').map(function() {
+          return $(this).val();
+        }).get();
+  
+         var beneficiary_emaillist = $('#beneficiaryTable').find('input.beneficiary_email').map(function() {
+          return $(this).val();
+        }).get();
+     var beneficiary_shareslist = $('#beneficiaryTable').find('input.beneficiary_shares').map(function() {
+          return $(this).val();
+        }).get();
+        
+
+
+        // send to server here
+      /*  console.log(banklist);
+        console.log(accountlist);
+        console.log(branchlist);
+        console.log(beneficiary_fullnamelist);
+        console.log(beneficiary_addresslist);
+        console.log(beneficiary_phonelist);
+        console.log(beneficiary_emaillist);
+        console.log(beneficiary_shareslist);
+        */
+
+       for(var i=0; i<beneficiary_fullnamelist.length; i++)
+        {
+            var detail1 ="<tr><td>"+ beneficiary_fullnamelist[i] +"</td><td>"+ beneficiary_addresslist[i]+ "</td><td>"+ beneficiary_phonelist[i] +
+            "</td><td>"+ beneficiary_emaillist[i] + '</td><td>'+ beneficiary_shareslist[i] + "</td></tr>"; 
+           // console.log(i);
+            $("#beneficiaryReviewDetails").append(detail1);
+            
+          
+        }
+       // $('table tbody tr select').length;
+       //console.log( "grrrrrrr: " + $('#bankDetails div select').length);
+      
+      
+       for(var i=0; i<banklist.length; i++)
+        {
+            var detail2 ="<tr><td>"+ banklist[i] +"</td><td>"+ accountlist[i]+ "</td><td>"+ branchlist[i] + "</td></tr>"; 
+           // console.log(i);
+            $("#bankReviewDetails").append(detail2);
+    
+          
+        }
+    
+        
+        
+       
+      
+       document.getElementById('light').style.display='block';
+        document.getElementById('fade').style.display='block';
+        
+    }
+    
+   
+   });
+    
+    
+     
+ $('#close').click(function(){
+     
+     //$(this).unbind("click");
+     
+      document.getElementById('light').style.display='none';
+      document.getElementById('fade').style.display='none';
+       //onclick="document.getElementById('light').style.display='none';document.getElementById('fade').style.display='none'"
+     
+ });
+   });
+
+
+</script>
+    <style>
+    </style>
+<!--background-->
+<!--h1> Holiday Homes Booking </h1>  -->
+<br />
+    <div class="bg-agile" style="width:60%;">
+
+	<div class="book-appointment" >
+	 <center><div style="height:100px;width:250px; background-image: url('images/trustees.png');background-size: 200px 100px;
+  background-repeat: no-repeat;"> </div></center><br />
+	<h2>MERISTEM TRUSTEES SIMPLE WILL BENEFICIARY-FORM</h2>
+		<div class="book-form agileits-login " id="page1">
+							<form action="{% url 'clientsave' %}" method="POST">
+								{% csrf_token %}
+							       <br /><br /> <h2 style="color:red">USER DETAILS</h2><hr /><br />
+								
+									<div class="phone_email">
+											<label>Title : </label>
+											<div class="form-text">
+												<i class="fas fa-user" aria-hidden="true"></i>												
+                                                
+                                                {{ client.title }}
+											</div> 
+									</div>
+									<div class="phone_email phone_email1">
+												<label>Surname : </label>
+												<div class="form-text">
+													<i class="fas fa-user" aria-hidden="true"></i>
+                                                    {{ client.surname }}
+													<!-- <input type="text" id="person_surname" name="person_surname" placeholder="" /> -->
+												</div> 
+									</div>
+									
+									<div class="phone_email">
+											<label>Firstname : </label>
+											<div class="form-text">
+												<i class="fas fa-user" aria-hidden="true"></i>
+												<!-- <input type="text" id="person_firstname" name="person_firstname" placeholder="" /> -->
+                                                {{ client.first_name }}
+											</div> 
+									</div>
+									<div class="phone_email phone_email1">
+												<label>Othername : </label>
+												<div class="form-text">
+													<i class="fas fa-user" aria-hidden="true"></i>
+													<!-- <input type="text" id="person_othername" name="person_othername" placeholder="" /> -->
+                                                    {{ client.other_name }}
+												</div> 
+									</div>
+								   
+								    <div class="phone_email">
+										<label>Phone number : </label>
+										<div class="form-text">
+											<i class="fa fa-phone" aria-hidden="true"></i>
+											<!-- <input type="number"  id="person_phone" name="person_phone" placeholder=""  /> -->
+                                            {{ client.phone_number }}
+										</div> 
+									</div> 
+							    	<div class="phone_email phone_email1">
+									<label>Address : </label>
+									<div class="form-text">
+									<!--	<i class="fa fa-envelope-o" aria-hidden="true"></i>
+										<input type="email" name="email" placeholder="" required="">
+									-->
+									<i class="fa fa-map-marker" aria-hidden="true"></i>
+										<!-- <input type="text" id="person_address" name="person_address" placeholder="" /> -->
+                                        {{ client.address }}
+									</div>
+								   </div>
+
+									<div class="phone_email">
+											<label>Company name : </label>
+											<div class="form-text">
+												<i class="fas fa-building" aria-hidden="true"></i>
+												<!-- <input type="text" id="person_company" name="person_company" placeholder=""  /> -->
+                                                {{ client.company_name }}
+											</div> 
+									</div>
+									<div class="phone_email phone_email1">
+										<label>Company Address : </label>
+										<div class="form-text">
+											<i class="fa fa-map-marker" aria-hidden="true"></i>
+											<!-- <input type="text" id="person_companyAddress" name="person_companyAddress" placeholder=""  /> -->
+                                            {{ client.company_address }}
+										</div> 
+									</div> 
+									
+									<div class="phone_email">
+										<label>Means of Identification : </label>
+										<!-- start_section_room -->
+										<div class="section_room">
+											{{ client.means_of_identification }}
+										</div>
+                                        
+									</div>
+									<div class="phone_email phone_email1">
+										<label>Identification Number: </label> 
+										<div class="book_date"> 
+											<i class="fas fa-id-card" aria-hidden="true"></i>
+											<!-- <input  id="person_idNumber" name="person_idNumber" type="text" value=""> -->
+                                            {{ client.identification_number }}
+											
+										</div>
+									</div> 
+						
+
+						
+									
+									
+									<div class="clear"></div>
+
+
+								<div class="agileits_reservation_grid">
+								    	<div class="phone_email">
+										<label>PFA: </label> 
+										<div class="book_date"> 
+											<i class="fas fa-id-card" aria-hidden="true"></i>
+											<!-- <input  id="person_pfa" name="person_pfa" type="text" value=""> -->
+											{{ client.PFA }}
+										</div>
+									</div>
+									<div class="phone_email phone_email1">
+										<label>RSA Number: </label> 
+										<div class="book_date"> 
+											<i class="fas fa-id-card" aria-hidden="true"></i>
+											<!-- <input  id="person_rsaNumber" name="person_rsaNumber" type="text" value=""> -->
+                                            {{ client.RSA }}
+											
+										</div>
+									</div> 
+									
+										<div class="phone_email">
+										<label>Will Executors: </label> 
+											<div class="section_room">
+                                                {{ client.will_executors }}
+
+										</div>
+                                       
+									</div>
+									<div class="phone_email phone_email1">
+										<label>If Others,please specify: </label> 
+										<div class="book_date"> 
+											<!-- <input  id="will_executors_others" name="will_executors_others" type="text" value=""> -->
+                                            {{ client.options }}
+											
+										</div>
+									</div> 
+    
+                             
+								<div class="clear"></div>
+								
+								<div style="padding-top:50px;color:#fff">-  </div>	
+								 <h2 style="color:red"> BANK DETAILS</h2><hr /><br />
+								<table id="bankDetails">
+									<tr>
+									<!--	<th style="width:20px"> </th> -->
+										<th> Bankname:</th>
+										<th> Account Number:</th>
+										<th> Branch:</th>
+									</tr>
+							
+									<tr>
+									<td> 
+    										<div class="book_date"> 
+    										
+                                                {{ client.bank_name }}
+    												
+    											</div>		
+										</td>
+										<td>
+
+										    <div class="book_date"> 
+											  <i class="far fa-keyboard" aria-hidden="true"></i>
+												<!-- <input  id="person_accountNumber" name="person_accountNumber[]" type="number" class="person_moreAccountNumber"  value="" > -->
+                                                {{ client.account_number }}
+											
+										    </div>
+										</td>
+										<td> 
+										<div class="book_date"> 
+											<i class="far fa-keyboard" aria-hidden="true"></i>
+												<!-- <input  id="person_accountBranch" name="person_accountBranch[]" type="text"  value="" class="person_moreBranch" > -->
+                                                {{client.branch}}
+										</div>
+										</td>
+									
+										
+									</tr>
+
+                                    <!-- adding more bankdetils  -->
+                                    <!-- <div class="more_bank_2" id="more_bank_2">
+                                    <tr>
+                                       
+                                            <td id="bank_name2"> 
+                                                <div class="book_date" > 
+                                                
+                                                    {{ client.bank_name_2 }}
+                                                        
+                                                    </div>		
+                                            </td>
+                                            <td  id="bank_num2">
+    
+                                                <div class="book_date_2"> 
+                                                  <i class="far fa-keyboard" aria-hidden="true"></i>
+                                                    
+                                                    {{ client.account_number_2 }}
+                                                
+                                                </div>
+                                            </td>
+                                            <td  id="bank_branch2"> 
+                                            <div class="book_date"> 
+                                                <i class="far fa-keyboard" aria-hidden="true"></i>
+                                                    
+                                                    {{client.branch_2}}
+                                            </div>
+                                            </td>
+                                      
+                                       
+                                        
+                                            
+                                    </tr>
+                                </div> -->
+													
+								</table>
+							<!--	<a class="btn btn-default" id="addBeneficiarybtn" href="#" role="button"><span class="glyphicon glyphicon-plus"></span>&nbsp;Add Beneficiary</a> -->
+								<center> 
+                                    
+                                        <br/>
+                                        
+                                        <div class="button_ button_5" id="more-line"> + </div>
+                                        <!-- <button id='more-line'  class="button_ button_5">+</button> -->
+                                        <br/> 
+                                    Add more Bank<br />
+                            
+                            </center> 
+
+							
+							
+							
+								<div style="padding-top:50px;color:#fff">-  </div>	
+								 <br /><h2 style="color:red"> BENEFICIARY DETAILS</h2><hr /><br />
+								<table id="beneficiaryTable">
+									<tr>
+									<!--	<th style="width:20px"> </th> -->
+										<th> Fullname</th>
+										<th> Address</th>
+										<th> Phone</th>
+										<th> Email</th>
+										<th> Values or (%)</th>
+									</tr>
+								<tr>
+										<!-- <td> <input type="text" id="beneficiary_fullname" name="beneficiary_fullname[]" class="beneficiary_fullname"   style="padding-left:5px;" placeholder=""  ></td> -->
+                                        <td> {{ client.full_name }} </td>
+										<!-- <td> <input type="text" id="beneficiary_address" name="beneficiary_address[]" class="beneficiary_address" style="padding-left:5px;" required="" placeholder=""></td> -->
+                                        <td>
+                                            {{ client.address_beneficiary }}
+                                        </td>
+										<!-- <td> <input type="number" id="beneficiary_phone" name="beneficiary_phone[]" class="beneficiary_phone" placeholder=""   style="padding-left:5px;"></td> -->
+                                        <td>
+                                            {{ client.phone_number_beneficiary }}
+                                        </td>
+										<!-- <td> <input type="text" id="beneficiary_email" name="beneficiary_email[]" class="beneficiary_email" style="padding-left:5px;" placeholder=""></td> -->
+                                        <!-- <td></td> -->
+                                        <td>
+                                            {{ client.email }}
+                                        </td>
+									    <!-- <td> <input type="text" id="beneficiary_shareValues" name="beneficiary_shareValues[]" class="beneficiary_shares" style="padding-left:5px;" placeholder=""></td> -->
+                                        <td>
+                                            {{ client.values }}
+                                        </td>
+									    
+									    </tr>
+									
+													
+								</table>
+							<!--	<a class="btn btn-default" id="addBeneficiarybtn" href="#" role="button"><span class="glyphicon glyphicon-plus"></span>&nbsp;Add Beneficiary</a> -->
+								<center>  <br /><div class="button_ button_5" id="addBeneficiarybtn"> + </div><br /> 
+							Add more Beneficiary<br /><br /> or <br /></center> 
+
+						<!--	<br /><br />	
+							<center> <input type="submit" name="submit" value="Proceed"  > </center>
+							-->
+							
+							
+	
+	
+
+   <br /> 
+       <center> 
+       <a href="javascript:void(0)" onclick="document.getElementById('light').style.display='block';document.getElementById('fade').style.display='block'">
+            
+            <span id="submitReviewbtn"> <input type="button" name="submit"  value="Submit"  /> </span>
+           
+        </a>
+        
+        </center>
+
+        <!-- preview page  -->
+ 
+  <div id="light" class="white_content"><span style="color:red">Kindly review the details to be submitted below..... </span>
+  <a href="javascript:void(0)" id="close"  style="float:right">Close</a>
+ <br /><br />
+  <table style="width:100%;font-size:13px">
+      <tr>
+          <td>
+              <table>
+                  
+                 <tr>
+                    <td colspan="2"><b>DETAILS...</b></td>
+                 </tr>
+                 <tr>
+                    <td>Title:</td>
+                    <td><p id="person_title_review"></p></td>
+                 </tr>
+                 <tr>
+                    <td>Surname:</td>
+                    <td><p id="person_surname_review"></p></td>
+                 </tr>
+                 <tr>
+                    <td>Othernames: </td>
+                    <td><p id="person_othername_review"></p></td>
+                 </tr>
+                 <tr>
+                    <td>Phone: </td>
+                    <td><p id="person_phone_review"></td>
+                 </tr>
+                 <tr>
+                    <td>Address: </td>
+                    <td><p id="person_address_review"></td>
+                 </tr>
+                 <tr>
+                    <td>Company Name: </td>
+                    <td><p id="person_companyName_review"></td>
+                 </tr>
+                 <tr>
+                    <td>Company Address: </td>
+                    <td><p id="person_companyAddress_review"></td>
+                 </tr>
+              </table> 
+              <br />
+              <table id="beneficiaryReviewDetails">
+                  <tr>
+                      <td colspan="5">BENEFICIARIES</td>
+                  </tr>
+                  
+                  
+              </table>
+          </td>
+         <td>
+             
+              <table>
+                 <tr>
+                    <td colspan="2">IDENTIFICATION</td>
+                 </tr>
+                 <tr>
+                    <td>TYPE:</td>
+                    <td><p id="person_idtype_review"></td>
+                 </tr>
+                 <tr>
+                    <td>ID-Number:</td>
+                    <td><p id="person_idnumber_review"></td>
+                 </tr>
+                 
+              </table> 
+              <br />
+              <table>
+                 <tr>
+                      <td colspan="2">OTHERS</td>
+                  </tr>
+                 <tr>
+                    <td>PFA: </td>
+                    <td><p id="person_pfa_review"></td>
+                 </tr>
+                 <tr>
+                    <td>RSA-Number: </td>
+                    <td><p id="person_rsaNumber_review"></td>
+                 </tr>
+                 
+              </table> 
+              <br />
+              
+              <table id="bankReviewDetails">
+                 <tr>
+                    <td colspan="3">BANK DETAILS</td>
+                 </tr>
+                 
+                 
+              </table> 
+             
+          </td>
+      </tr>
+  </table>
+  <br />	
+		<center>
+            
+             <!-- <button type="submit">save</button> -->
+            <input type="submit" name="submit" value="Proceed"  > </center>	
+	
+</form>
+   </div>
+  <div id="fade" class="black_overlay"></div>
+	
+	
+	
+   </div>
+	</div>
+   </div>
+
+  
+   <!--copyright-->
+			<div class="copy w3ls">
+		      <!-- <p>&copy; 2018 Holiday Homes Booking Form . All Rights Reserved  | Design by <a href="http://w3layouts.com/" target="_blank">W3layouts</a> </p>
+			  -->
+			</div>
+				<!--//copyright-->
+				<script type="text/javascript" src="{% static 'js/jquery-2.1.4.min.js' %}"></script>
+				<!-- Calendar -->
+						<link rel="stylesheet" href="{% static 'css/jquery-ui.css'  %}" />
+						<script src="{% static 'js/jquery-ui.js'  %}"></script>
+
+                        <!-- my own script here owolabi  -->
+                <script type="text/javascript" src="{% static 'js/jquery-3.6.0.min.js' %}"></script>
+
+                        <script src="{% static 'js/jquery-3.6.0.min.js' %}"></script>
+                        <script src="{% static 'js/jquery-ui.js' %}"></script>
+
+                        <script src="{% static 'js/add_more.js'  %}"></script>
+
+				<script>
+						$(function() {
+							$( "#datepicker,#datepicker1,#datepicker2,#datepicker3" ).datepicker();
+						});
+				</script>
+			<!-- //Calendar -->
+
+</body>
+</html>

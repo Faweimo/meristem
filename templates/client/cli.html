@@ -1,0 +1,294 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Simple Will</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" >
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"  />
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+</head>
+<body>
+
+<!-- Modal -->
+    <div id="overlay">
+        <div id="modal">
+          
+          <!-- 1. create elements to hold values -->
+          <p>Title: <strong id="confirmationTitle">Mr</strong></p>
+          <table>
+              <tr>
+                  <th>Title</th>
+                  <th>Surname</th>
+              </tr>
+              <td><p id="titlInfo" type="text" name="titlInfo" ></p></td>
+              <td><p id="placeName" type="text" name="placeName"></p></td>
+              </tr>
+              <tr>
+                  <th>Firstname</th>
+                  <th>Othername</th>
+              </tr>
+              <td><p id="label" type="text" name="label"></p></td>
+              <td><p id="othern" type="text" name="othern"></p></td>
+              <div>
+              <tr>
+                  <th>Phone</th>
+                  <th><Address</th>
+                  
+                  
+              </tr>
+              <td><p id="pnumber" type="text" name="pnumber"></p></td>
+              <td><p id="addr_name" type="text" name="addr_name"></p></td>
+              <div>
+              <tr>
+                  <th>Company Name</th>
+                  <th>Company Address</th>
+              </tr>
+              <td><p id="namecom" type="text" name="namecom"></p></td>
+              <td><p id="addre_com" type="text" name="addre_com"></p></td>
+              <tr>
+                  <th>Means of Identification</th>
+                  <th>Identification Number</th>
+              </tr>
+              <td><p id="identity" type="text" name="identity"></p></td>
+              <td><p id="nmberiden" type="text" name="nmberiden"></p></td>
+              <div>
+              <tr>
+                  <th>PFA</th>
+                  <th>Rsa Number</th>
+              </tr>
+              <td><p id="pfanum" type="text" name="pfanum"></p></td>
+              <td><p id="nu_rsa" type="text" name="nu_rsa"></p></td>
+              <div>
+              <tr>
+                  <th>Will Executor</th>
+                  <th>If Other</th>
+              </tr>
+              <td><p id="represent" type="text" name="represent"></p></td>
+              <td><p id="spec" type="text" name="spec"></p></td>
+              <div>
+              <tr>
+                  <th>Bank Name</th>
+                  <th>Account Number </th>
+                  <th>Branch</th>
+              </tr>
+              <td><p id="briefcase" type="text" name="briefcase"></p></td>
+              <td><p id="ownerIdentifier" type="text" name="ownerIdentifier"></p></td>
+              <td><p id="locationBranch" type="text" name="locationBranch"></p></td>
+              <div>
+                <td>
+                  <br>
+                  <br>
+                  <br>
+                  <button id="cancel"  name="cancel"  >Cancel</button>
+                  <button type="submit" href="/">Submit</button>  
+              </td>
+              </div>
+          </table>
+        </div>
+    </div>          <!-- End of Modal -->
+
+
+<!-- Main form -->
+    <div class="testbox">           
+       
+        <form action="" id="formWill" method="POST"></form>
+            
+        <div class="banner">
+        <h1>Client Information </h1>
+      </div>
+      <br/>
+      <fieldset>
+        <legend>Client Details</legend>
+        <div class="colums">
+          <div class="item">
+            
+
+            
+            <label>Title<span>*</span></label>
+            <input type="text" id="client-title" name="client-title" placeholder="e.g Mr/Mrs/"/>
+          </div>
+          <div class="item">
+            <label> Surname<span>*</span></label>
+            <input type="text" id="surname"  name="surname" />
+          </div>
+          <div class="item">
+            <label>Firstname<span>*</span></label>
+            <input type="text" id="firstname"  name="firstname" />
+          </div>
+          <div class="item">
+            <label>Othername<span>*</span></label>
+            <input type="text" id="othername" name="othername"/>
+          </div>
+          <div class="item">
+            <label>Phone Number<span>*</span> </label>
+            <input type="text" id="phone" name="phone" />
+          </div>
+          <div class="item">
+            <label>Address<span>*</span></label>
+            <input id="caddress" type="text"   name="caddress" />
+          </div>
+          <div class="item">
+            <label>Company Name<span>*</span></label>
+             <input id="companyn"  type="text"  name="companyn" />
+          </div>
+          <div class="item">
+            <label>Company Address<span>*</span></label>
+            <input id="addresscom" type="text"   name="addresscom" />
+          </div>
+          
+            <div class="item position-item">
+            <label>Mean of Identification<span>*</span></label>
+              <select id="meanOfIdentification" required>
+                <option value="Voter Card">Voter Card</option>
+                <option value="International Passport">International Passport</option>
+                <option value="Driver's Licence">Driver's Licence</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+          <div class="item">
+            <label>Identification Number<span>*</span></label>
+            <input type="text" id="identificationNumber" name="identificationNumber" />
+          </div>
+          <div class="item">
+            <label>PFA<span>*</span></label>
+            <input type="text" id="pfa" name="pfa" />
+          </div>
+          <div class="item">
+            <label>Rsa-Number<span>*</span></label>
+            <input type="text" id="rsaNumber" name="rsaNumber" />
+          </div>
+          <div class="item position-item">
+            <label> Will Executors <span>*</span></label>
+              <select id="willExecutors" required>
+                <option value="Meristem Trustees">Meristem Trustees</option>
+                <option value="Trustees">Trustees</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+          <div class="item">
+            <label>If Others, Please Specify</label>
+            <input type="text" id="if_other" name="if_other" />
+          </div>
+      </fieldset>
+      <br/> 
+
+      <!-- Bank Details -->
+      <fieldset>
+        <legend>Bank Details</legend>
+        <div class="container">
+          <table class="_table">
+            <thead>
+              <tr>
+                <th>Bank Name</th>
+                <th>Account Number</th>
+                <th>Branch</th>
+                <th width="50px">
+                  <div class="action_container">
+                    <button class="succes" id="addMoreBankBtn">
+                      <i class="fa fa-plus"></i>
+                    </button>
+                  </div>
+                </th>
+              </tr>
+            </thead>
+            <tbody id="table_body">
+              <tr>
+                <td>
+                  <div>
+                    <select  id="bank_name">
+                      <option value="">---Select---</option>
+                      <option value="fcmb">FCMB </option>
+                      <option value="access">ACCESS</option>
+                      <option value="zenith">ZENITH</option>
+                      <option value="gtb">GTB</option>
+                    </select>
+                </td>
+                <td>
+                  <input type="text" id="account_number" name="account_number"/>
+                </td>
+                <td>
+                  <input type="text" id="branch" name="branch" />
+                </td>
+                <td>
+                  <div class="action_container">
+                    <button class="danger" onclick="remove_tr(this)">
+                      <i class="fa fa-close"></i>
+                    </button>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </fieldset>
+      <br/>
+      <!-- Beneficiary Details -->
+      <fieldset>
+        <legend>Beneficiary Details</legend>
+        <div class="container">
+          <table class="_table">
+            <thead>
+              <tr>
+                <th>Full Name</th>
+                <th>Address</th>
+                <th>Phone</th>
+                <th>Email</th>
+                <th>Value or (%)</th>
+                <th width="50px">
+                  <div class="action_container">
+                    <button class="succes" >
+                      <i class="fa fa-plus"></i>
+                    </button>
+                  </div>
+                </th>
+              </tr>
+            </thead>
+            <tbody id="table_body">
+              <tr>
+                <td>
+                  <input type="text" />
+                </td>
+                <td>
+                  <input type="text" />
+                </td>
+                <td>
+                  <input type="text" />
+                </td>
+                <td>
+                  <input type="text" />
+                </td>
+                <td>
+                  <input type="text" />
+                </td>
+                <td>
+                  <div class="action_container">
+                    <button class="danger" >
+                      <i class="fa fa-close"></i>
+                    </button>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </fieldset>
+      <div class="btn-block">
+      <button id="formSubmit">submit</button>
+      </div>
+    </form>
+    </div>       <!-- End of Form -->
+
+
+    
+<script src="{% static 'main.js' %}"></script>     <!--This is script, it meet for bank and beneficary details, but i didn't get it to depulicate another role -->
+<script src="static/js/script.js"></script>   <!--This script is meet for function that outputed values to modal -->
+
+</body>
+</html>
