@@ -51,7 +51,7 @@ class ClientDetailForm(forms.ModelForm):
         }),
         'means_of_identification':forms.Select(attrs={
             'type':'text',
-            'id':'country1',
+            'id':'means_of_id',
             'class':'frm-field required sect',
             'style':'height:40px;border-radius:0px',
             'selected':'true'
@@ -60,7 +60,7 @@ class ClientDetailForm(forms.ModelForm):
         }),
         'will_executors':forms.Select(attrs={
             'type':'text',
-            'id':'country1',
+            'id':'country',
             'class':'frm-field required sect',
             'style':'height:40px;border-radius:0px',
             'label':"Placeholder"
@@ -88,7 +88,7 @@ class ClientDetailForm(forms.ModelForm):
         }),
         'bank_name':forms.Select(attrs={
             'type':'text',
-            'id':'country1',
+            'id':'bank_name',
             'class':'person_bankName frm-field required sect',
             'style':'height:40px;border-radius:0px'
            

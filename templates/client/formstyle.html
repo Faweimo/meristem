@@ -64,19 +64,34 @@
 
 
                     <div class="add_more_bank" id="add_more_bank">
-                    <div id="bank_name2">
-                        <label for=""> bank_name_2</label>
-                        {{ client.bank_name_2 }}
+                        <div id="bank_name2">
+                              <label for=""> bank_name_2</label>
+                              {{ client.bank_name_2 }}
+                        </div>
+                        <div id="bank_num2">
+                              <label for=""> account_number_2</label>
+                        {{ client.account_number_2 }}
+                        </div>
+                        <div id="bank_branch2">
+                           <label for=""> branch_2</label>
+                           {{client.branch_2 }}
+                        </div>
                     </div>
-                    <div id="bank_num2">
-                        <label for=""> account_number_2</label>
-                    {{ client.account_number_2 }}
-                    </div>
-                 <div id="bank_branch2">
-                    <label for=""> branch_2</label>
-                    {{client.branch_2 }}
+
+                    <div class="add_more_bank" id="add_more_bank3">
+                     <div id="bank_name2">
+                           <label for=""> bank_name_3</label>
+                           {{ client.bank_name_3 }}
+                     </div>
+                     <div id="bank_num3">
+                           <label for=""> account_number_3</label>
+                     {{ client.account_number_3 }}
+                     </div>
+                     <div id="bank_branch3">
+                        <label for=""> branch_3</label>
+                        {{ client.branch_3 }}
+                     </div>
                  </div>
-                    </div>
                     <div id="button">
                         <button id="more-line" type="button">Add bank details</button>
                     </div>
@@ -131,7 +146,114 @@
                             <div class="modal-content">
                             <span class="close">&times;</span>
                             <span id="textInput"></span>
-                            <span id="textInput2"></span>
+                            <table style="width:100%;font-size:13px">
+                                <tr>
+                                    <td>
+                                        <table>
+                                            
+                                           <tr>
+                                              <td colspan="2"><b>DETAILS...</b></td>
+                                           </tr>
+                                           <tr>
+                                              <td>Title:</td>
+                                              <td><p id="person_title_review"></p></td>
+                                           </tr>
+                                           <tr>
+                                             <td>Surname:</td>
+                                             <td><p id="person_surname_review"></p></td>
+                                          </tr>
+                                           <tr>
+                                             <td>First_name:</td>
+                                             <td><p id="person_firstname_review"></p></td>
+                                          </tr>
+                                          
+                                           <tr>
+                                              <td>Othernames: </td>
+                                              <td><p id="person_othername_review"></p></td>
+                                           </tr>
+                                           <tr>
+                                              <td>Phone: </td>
+                                              <td><p id="person_phone_review"></td>
+                                           </tr>
+                                           <tr>
+                                              <td>Address: </td>
+                                              <td><p id="person_address_review"></td>
+                                           </tr>
+                                           <tr>
+                                              <td>Company Name: </td>
+                                              <td><p id="person_companyName_review"></td>
+                                           </tr>
+                                           <tr>CharField
+                                              <td>Company Address: </td>
+                                              <td><p id="person_companyAddress_review"></p></td>
+                                           </tr>
+                                        </table> 
+                                        <br />
+                                        <table id="beneficiaryReviewDetails">
+                                            <tr>
+                                                <td colspan="5">BENEFICIARIES</td>
+                                            </tr>
+                                            
+                                            
+                                        </table>
+                                    </td>
+                                   <td>
+                                       
+                                        <table>
+                                           <tr>
+                                              <td colspan="2">IDENTIFICATION</td>
+                                           </tr>
+                                           <tr>
+                                              <td>TYPE:</td>
+                                              <td><p id="person_idtype_review"></td>
+                                           </tr>
+                                           <tr>
+                                              <td>ID-Number:</td>
+                                              <td><p id="person_idnumber_review"></td>
+                                           </tr>
+                                           
+                                        </table> 
+                                        <br />
+                                        <table>
+                                           <tr>
+                                                <td colspan="2">OTHERS</td>
+                                            </tr>
+                                           <tr>
+                                              <td>PFA: </td>
+                                              <td><p id="person_pfa_review"></td>
+                                           </tr>
+                                           <tr>
+                                              <td>RSA-Number: </td>
+                                              <td><p id="person_rsaNumber_review"></td>
+                                           </tr>
+                                           
+                                        </table> 
+                                        <br />
+                                        
+                                        <table id="bankReviewDetails">
+                                           <tr>
+                                              <td colspan="3">BANK DETAILS</td>
+                                           </tr>
+                                           
+                                           <tr>
+                                             <td>Bank Name:</td>
+                                             <td><p id="person_bankname_review"></td>
+                                          </tr>
+
+                                          <tr>
+                                             <td>Account Number:</td>
+                                             <td><p id="person_accountnumber_review"></td>
+                                          </tr>
+                                          <tr>
+                                             <td>Branch:</td>
+                                             <td><p id="person_branch_review"></td>
+                                          </tr>
+                                           
+                                        </table> 
+                                       
+                                    </td>
+                                </tr>
+                            </table>
                             
                             <button type="submit">submit</button>
                             </div>

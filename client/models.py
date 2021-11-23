@@ -58,11 +58,18 @@ class ClientDetail(models.Model):
     account_number = models.CharField(max_length=100, blank=True, null=True)
     branch = models.CharField(max_length=100, blank=True, null=True)
     
-    # for adding more bank details 
+    # for adding more bank details 2
     
     bank_name_2 = models.ForeignKey(BankName,related_name='Bank', on_delete=models.CASCADE,blank=True,null=True)
     account_number_2 = models.CharField(max_length=100, blank=True, null=True)
     branch_2 = models.CharField(max_length=100, blank=True, null=True)
+    
+     # for adding more bank details 3
+    
+    bank_name_3 = models.ForeignKey(BankName,related_name='Bank3', on_delete=models.CASCADE,blank=True,null=True)
+    account_number_3bank_name_3 = models.CharField(max_length=100, blank=True, null=True)
+    branch_3bank_name_3 = models.CharField(max_length=100, blank=True, null=True)
+    
     
     # beneficiary 
     
@@ -72,6 +79,7 @@ class ClientDetail(models.Model):
     bank_name_beneficiary       = models.CharField(max_length=100, blank=True, null=True)
     email                       = models.EmailField(max_length=255,blank=True,null=True)
     values                      = models.IntegerField(blank=True,null=True)
+    
     # for adding more beneficiary details 
     
     full_name_2       = models.CharField(max_length=100, blank=True, null=True)
